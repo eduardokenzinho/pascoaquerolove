@@ -1,0 +1,12 @@
+{
+  "name": "pascoaquerolove",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Landing page com Meta Conversions API via backend local",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
