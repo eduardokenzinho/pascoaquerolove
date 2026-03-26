@@ -2,18 +2,20 @@
 
 function work() {
     function initHeroCarousel() {
-        var carouselIsland = document.querySelector('astro-island[component-url*="HeroCarousel"]');
-        if (!carouselIsland) {
+        var carouselRoot =
+            document.querySelector('.hero-carousel') ||
+            document.querySelector('astro-island[component-url*="HeroCarousel"]');
+        if (!carouselRoot) {
             return;
         }
 
-        var viewport = carouselIsland.querySelector('.relative.w-full.rounded-2xl.overflow-hidden');
+        var viewport = carouselRoot.querySelector('.relative.w-full.rounded-2xl.overflow-hidden');
         var mainImage = viewport ? viewport.querySelector('img') : null;
         var counter = viewport ? viewport.querySelector('span') : null;
         var overlayButtons = viewport ? Array.from(viewport.querySelectorAll('button')) : [];
         var prevButton = overlayButtons[0] || null;
         var nextButton = overlayButtons[1] || null;
-        var thumbnailsRow = carouselIsland.querySelector('.flex.gap-1.overflow-x-auto');
+        var thumbnailsRow = carouselRoot.querySelector('.flex.gap-1.overflow-x-auto');
         var thumbnailButtons = thumbnailsRow ? Array.from(thumbnailsRow.querySelectorAll('button')) : [];
 
         if (!viewport || !mainImage || !counter || thumbnailButtons.length === 0) {
