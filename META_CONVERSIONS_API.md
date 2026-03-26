@@ -18,6 +18,9 @@ Este site atual e estatico. Isso significa que o `access_token` da Meta nao deve
 - `server.js`
   Servidor Node local sem dependencias externas para servir os arquivos estaticos e encaminhar `POST /api/meta/events` para a Meta.
 
+- `api/meta/events.js`
+  Funcao serverless para deploy na Vercel. Em producao, e ela quem responde em `/api/meta/events`.
+
 ## Como rodar localmente
 
 1. Copie `.env.example` para `.env`.
@@ -31,6 +34,15 @@ node server.js
 ```
 
 4. Abra `http://127.0.0.1:3000`.
+
+## Como publicar na Vercel
+
+1. Suba este codigo com a pasta `api/`.
+2. No painel da Vercel, configure:
+   `META_PIXEL_ID`, `META_ACCESS_TOKEN`, `META_API_VERSION` e, se quiser testar, `META_TEST_EVENT_CODE`.
+3. Faça um novo deploy.
+
+Em producao, o frontend usa `/api/meta/events` automaticamente no mesmo dominio.
 
 ## Como usar no frontend
 
