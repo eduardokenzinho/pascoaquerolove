@@ -35,6 +35,12 @@ function sendJson(res, statusCode, body) {
   res.send(JSON.stringify(body));
 }
 
+function sanitizeErrorMessage(message) {
+  return String(message || '')
+    .replace(/access_token=[^&"\s]+/gi, 'access_token=[redacted]')
+    .replace(/EAA[A-Za-z0-9]+/g, '[redacted-token]');
+}
+
 function getClientIp(req) {
   const forwardedFor = req.headers['x-forwarded-for'];
   if (typeof forwardedFor === 'string' && forwardedFor.length > 0) {
@@ -136,6 +142,8 @@ module.exports = async function handler(req, res) {
     const result = await forwardToMeta(input, req);
     sendJson(res, 200, { ok: true, result });
   } catch (error) {
-    sendJson(res, 500, { ok: false, error: error.message });
+    const safeMessage = sanitizeErrorMessage(error && error.message);
+    console.error('Meta CAPI error:', safeMessage);
+    sendJson(res, 500, { ok: false, error: safeMessage });
   }
 };
