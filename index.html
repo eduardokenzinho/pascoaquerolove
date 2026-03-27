@@ -26,6 +26,79 @@
       gtag('config', 'G-P7XSQF9G6C');
     </script><link rel="stylesheet" href="css/index.Bx3hafOS.css"><style>@font-face{font-family:"RobotoCustom";src:url("fonts/static/Roboto-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}@font-face{font-family:"RobotoCustom";src:url("fonts/static/Roboto-Bold.ttf") format("truetype");font-weight:700;font-style:normal;font-display:swap}@font-face{font-family:"RobotoCustom";src:url("fonts/static/Roboto-Black.ttf") format("truetype");font-weight:900;font-style:normal;font-display:swap}:root{--font-sans:"RobotoCustom",sans-serif;--font-display:"RobotoCustom",sans-serif;--font-mono:"RobotoCustom",sans-serif}</style>
 <style>#social-scroll[data-astro-cid-ftbmfwyh]::-webkit-scrollbar{display:none}
+</style><style>
+html,body{
+  overflow-x:hidden;
+}
+main{
+  width:100%;
+}
+.hero-header header>div,
+main>section{
+  width:min(100%,430px);
+}
+.hero-carousel,
+#social-scroll{
+  width:100%;
+}
+@media (max-width:359px){
+  .hero-header header>div>div{
+    grid-template-columns:1fr;
+  }
+  .hero-header header>div,
+  main>section{
+    width:100%;
+  }
+  main>section{
+    padding-left:1rem !important;
+    padding-right:1rem !important;
+  }
+  #kits form label>div:first-of-type{
+    gap:.5rem;
+  }
+  #kits form label>div:last-of-type{
+    flex-direction:column;
+    align-items:flex-start;
+    gap:.5rem;
+  }
+  #kits form label>div:last-of-type>span{
+    width:100%;
+    text-align:center;
+  }
+  .grid.grid-cols-4{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+  }
+  #social-scroll img[data-astro-cid-ftbmfwyh]{
+    width:calc(85% - 6px) !important;
+    height:220px !important;
+  }
+}
+@media (min-width:640px){
+  .hero-header header>div,
+  main>section{
+    width:min(calc(100% - 2rem),720px);
+  }
+  .hero-carousel{
+    max-width:560px;
+    margin-inline:auto;
+  }
+  #social-scroll img[data-astro-cid-ftbmfwyh]{
+    width:calc(33.333% - 8px) !important;
+  }
+}
+@media (min-width:960px){
+  .hero-header header>div,
+  main>section{
+    width:min(calc(100% - 3rem),920px);
+  }
+  .hero-carousel{
+    max-width:620px;
+  }
+  #social-scroll img[data-astro-cid-ftbmfwyh]{
+    width:calc(25% - 9px) !important;
+    height:280px !important;
+  }
+}
 </style></head> <body class="min-h-screen bg-brand-cream text-brand-text font-sans"> <noscript> <img height="1" width="1" style="display:none" src="https://www.facebook.com/tr?id=1265085375004506&ev=PageView&noscript=1"> </noscript>   <main class="flex flex-col items-center"> <!-- Sticky header with logo + countdown + stock bar --><div class="hero-header"><link rel="preload" as="image" href="/images/love-saint-white.png"><header class="sticky top-0 z-50 w-full transition-all duration-300" style="background-color:#84243F"><div class="mx-auto max-w-[430px] px-4 flex flex-col items-center transition-all duration-300 gap-1.5 py-2"><img src="images/love-saint-white.png" alt="Love" class="object-contain transition-all duration-300 h-9"><div class="w-full grid grid-cols-2 gap-2"><div class="flex flex-col items-center justify-center rounded-xl px-3 py-1.5" style="border:1.5px solid rgba(255,255,255,0.22)"><span class="text-white/70 transition-all duration-300 text-[10px]">Oferta expira em:</span><span id="offer-countdown" class="text-white font-bold font-mono tabular-nums leading-tight transition-all duration-300 text-sm">30<!-- -->:<!-- -->00</span></div><div class="flex flex-col justify-center rounded-xl px-3 py-1.5 gap-1" style="border:1.5px solid rgba(255,255,255,0.22)"><div class="flex items-center justify-between"><span class="text-white/80 text-[10px]">Estoque:</span><span class="font-bold text-[10px]" style="color:#F5C533">92% VENDIDO</span></div><div class="relative w-full rounded-full overflow-hidden" style="height:18px;background-color:rgba(255,255,255,0.12)"><div class="absolute inset-y-0 left-0 rounded-full" style="width:92%;background:linear-gradient(to right, #F5C533 0%, #F97316 55%, #CC2222 100%)"></div><span class="absolute inset-0 flex items-center justify-center text-white font-bold text-[10px] z-10 leading-none">Restam 127 un.</span></div></div></div></div></header></div> <!-- Below-the-fold hero content --> <section class="px-4 pt-6 pb-10 flex flex-col items-center text-center max-w-107.5 mx-auto w-full text-brand-text" style="background-color: #FFFFF6;"> <!-- Mascot image --> <!-- <img
     src="/Coelho.png"
     alt="Mascote Love"
